@@ -1,1 +1,11 @@
-h1{color: blue; text-align-last: center;}
+* { margin: 0}
+h1{color: rgb(80, 6, 177); 
+  text-decoration: solid;
+  text-align-last: center;
+background-color: aqua;}
+#name{color: rgb(80, 6, 177);text-align-last: auto;}
+#box1{height: 130px;width: 130px;
+background-image: url(DEV\ IMG.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-size: contain; float: right;}
