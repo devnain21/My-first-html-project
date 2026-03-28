@@ -1,11 +1,282 @@
-* { margin: 0}
-h1{color: rgb(80, 6, 177); 
-  text-decoration: solid;
-  text-align-last: center;
-background-color: aqua;}
-#name{color: rgb(80, 6, 177);text-align-last: auto;}
-#box1{height: 130px;width: 130px;
-background-image: url(DEV\ IMG.jpg);
-background-repeat: no-repeat;
-background-position: center;
-background-size: contain; float: right;}
+1	:root {
+     2	  --bg: #d8ebee;
+     3	  --card: #f7fbfc;
+     4	  --text: #182033;
+     5	  --muted: #5f6d87;
+     6	  --brand: #5b0f74;
+     7	  --accent: #156eea;
+     8	  --success: #15bc5f;
+     9	  --ring: rgba(21, 110, 234, 0.2);
+    10	}
+    11	
+    12	* {
+    13	  box-sizing: border-box;
+    14	  margin: 0;
+    15	  padding: 0;
+    16	}
+    17	
+    18	body {
+    19	  font-family: 'Poppins', sans-serif;
+    20	  background: linear-gradient(180deg, #e9f6f8, var(--bg));
+    21	  color: var(--text);
+    22	  min-height: 100vh;
+    23	  padding: 28px 16px;
+    24	}
+    25	
+    26	.page-shell {
+    27	  max-width: 1150px;
+    28	  margin: 0 auto;
+    29	}
+    30	
+    31	.top-card {
+    32	  background: #e2f0f3;
+    33	  border-radius: 26px;
+    34	  padding: 18px;
+    35	  border: 1px solid #cfe6eb;
+    36	  box-shadow: 0 14px 28px rgba(16, 43, 64, 0.12);
+    37	}
+    38	
+    39	.brand-row {
+    40	  background: var(--card);
+    41	  border-radius: 18px;
+    42	  padding: 18px;
+    43	  display: flex;
+    44	  align-items: center;
+    45	  gap: 16px;
+    46	  flex-wrap: wrap;
+    47	}
+    48	
+    49	.brand-logo {
+    50	  width: 94px;
+    51	  height: 94px;
+    52	  border-radius: 18px;
+    53	  object-fit: cover;
+    54	  border: 5px solid #e8eefc;
+    55	  box-shadow: 0 6px 14px rgba(18, 33, 79, 0.15);
+    56	}
+    57	
+    58	.brand-copy h1 {
+    59	  font-size: clamp(1.3rem, 2.8vw, 2rem);
+    60	  line-height: 1.2;
+    61	}
+    62	
+    63	.brand-copy h1 span {
+    64	  color: var(--brand);
+    65	}
+    66	
+    67	.brand-copy p {
+    68	  color: var(--muted);
+    69	  margin-top: 6px;
+    70	}
+    71	
+    72	.header-cta {
+    73	  margin-left: auto;
+    74	  display: flex;
+    75	  gap: 10px;
+    76	  align-items: center;
+    77	  flex-wrap: wrap;
+    78	}
+    79	
+    80	.pill,
+    81	.contact-btn {
+    82	  border: 0;
+    83	  text-decoration: none;
+    84	  color: #28354f;
+    85	  background: #eef3f7;
+    86	  border-radius: 12px;
+    87	  padding: 10px 14px;
+    88	  font-weight: 600;
+    89	}
+    90	
+    91	.pill.danger {
+    92	  background: #ef4444;
+    93	  color: white;
+    94	  box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+    95	}
+    96	
+    97	.contact-btn {
+    98	  background: #e9f2ff;
+    99	  color: #0a5de2;
+   100	  border: 1px solid #c6dafd;
+   101	}
+   102	
+   103	.ticker-row {
+   104	  display: flex;
+   105	  gap: 14px;
+   106	  align-items: center;
+   107	  margin-top: 14px;
+   108	  background: #f8fcfd;
+   109	  border: 1px solid #d6e8ee;
+   110	  border-radius: 12px;
+   111	  padding: 12px 14px;
+   112	  flex-wrap: wrap;
+   113	}
+   114	
+   115	.notice {
+   116	  color: #3b1a1a;
+   117	  background: #ffe7e7;
+   118	  border-radius: 10px;
+   119	  padding: 7px 12px;
+   120	}
+   121	
+   122	.menu-row {
+   123	  margin-top: 14px;
+   124	  display: flex;
+   125	  gap: 10px;
+   126	  align-items: center;
+   127	  border: 2px solid #bf9cc9;
+   128	  border-radius: 16px;
+   129	  padding: 12px;
+   130	  background: white;
+   131	  flex-wrap: wrap;
+   132	}
+   133	
+   134	.tab {
+   135	  border: 0;
+   136	  padding: 11px 20px;
+   137	  border-radius: 999px;
+   138	  background: #edf0f5;
+   139	  font-size: 1rem;
+   140	  font-weight: 600;
+   141	  color: #2e3a52;
+   142	}
+   143	
+   144	.tab.active {
+   145	  color: #fff;
+   146	  background: linear-gradient(135deg, #7a0b7a, #5c055f);
+   147	  box-shadow: 0 7px 16px rgba(99, 12, 113, 0.35);
+   148	}
+   149	
+   150	.join-btn {
+   151	  margin-left: auto;
+   152	  background: var(--success);
+   153	  color: #fff;
+   154	  text-decoration: none;
+   155	  font-weight: 700;
+   156	  border-radius: 999px;
+   157	  padding: 10px 22px;
+   158	}
+   159	
+   160	.search-wrap {
+   161	  margin: 24px auto 0;
+   162	  max-width: 860px;
+   163	  background: white;
+   164	  border-radius: 999px;
+   165	  padding: 10px;
+   166	  display: flex;
+   167	  box-shadow: 0 10px 24px rgba(32, 67, 89, 0.12);
+   168	}
+   169	
+   170	.search-wrap input {
+   171	  border: 0;
+   172	  outline: 0;
+   173	  flex: 1;
+   174	  font-size: 1.2rem;
+   175	  padding: 12px 18px;
+   176	  background: transparent;
+   177	  color: var(--text);
+   178	}
+   179	
+   180	.search-wrap button {
+   181	  border: 0;
+   182	  width: 58px;
+   183	  height: 58px;
+   184	  border-radius: 50%;
+   185	  background: linear-gradient(140deg, #4f27a5, #1372eb);
+   186	  color: white;
+   187	  font-size: 1.4rem;
+   188	}
+   189	
+   190	.filters {
+   191	  margin-top: 24px;
+   192	  display: flex;
+   193	  gap: 10px;
+   194	  flex-wrap: wrap;
+   195	}
+   196	
+   197	.chip {
+   198	  border: 1px solid #d2e4eb;
+   199	  background: #f6fcfd;
+   200	  color: #2f405b;
+   201	  border-radius: 999px;
+   202	  padding: 10px 18px;
+   203	  font-weight: 600;
+   204	}
+   205	
+   206	.chip.selected {
+   207	  background: linear-gradient(135deg, #0077ff, #02b8ef);
+   208	  color: #fff;
+   209	  border-color: transparent;
+   210	  box-shadow: 0 8px 20px var(--ring);
+   211	}
+   212	
+   213	.service-grid {
+   214	  margin-top: 24px;
+   215	  display: grid;
+   216	  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+   217	  gap: 16px;
+   218	}
+   219	
+   220	.service-card {
+   221	  background: #f8fcfd;
+   222	  border: 1px solid #d5e7ed;
+   223	  border-radius: 16px;
+   224	  padding: 24px 14px;
+   225	  text-align: center;
+   226	  box-shadow: 0 10px 20px rgba(15, 50, 67, 0.08);
+   227	  transition: transform .2s ease, box-shadow .2s ease;
+   228	}
+   229	
+   230	.service-card:hover {
+   231	  transform: translateY(-4px);
+   232	  box-shadow: 0 16px 28px rgba(10, 38, 66, 0.14);
+   233	}
+   234	
+   235	.service-card span {
+   236	  font-size: 1.9rem;
+   237	}
+   238	
+   239	.service-card h3 {
+   240	  margin-top: 10px;
+   241	  font-size: 1.2rem;
+   242	}
+   243	
+   244	footer {
+   245	  border-top: 2px solid #caaad0;
+   246	  margin-top: 26px;
+   247	  padding: 26px 10px 0;
+   248	  text-align: center;
+   249	  color: var(--muted);
+   250	}
+   251	
+   252	.footer-links {
+   253	  display: flex;
+   254	  gap: 20px;
+   255	  justify-content: center;
+   256	  margin-bottom: 10px;
+   257	}
+   258	
+   259	.footer-links a {
+   260	  color: var(--brand);
+   261	  font-weight: 700;
+   262	  text-decoration: none;
+   263	}
+   264	
+   265	small {
+   266	  display: block;
+   267	  margin-top: 8px;
+   268	}
+   269	
+   270	@media (max-width: 700px) {
+   271	  .search-wrap input {
+   272	    font-size: 1rem;
+   273	  }
+   274	
+   275	  .header-cta {
+   276	    margin-left: 0;
+   277	  }
+   278	
+   279	  .join-btn {
+   280	    margin-left: 0;
+   281	  }
+   282	}
