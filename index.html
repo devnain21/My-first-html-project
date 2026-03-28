@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nain Photostate & Online Center</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
@@ -15,10 +13,13 @@
 </head>
 
 <body>
-  <div class="page-shell">
 
-    <!-- HEADER -->
-    <header class="top-card">
+<div class="page-shell">
+
+  <!-- HEADER -->
+  <header class="top-card">
+
+    <div class="brand-row">
       <div class="brand-copy">
         <h1>NAIN PHOTOSTATE <span>& ONLINE CENTER</span></h1>
         <p>"हर ऑनलाइन काम, अब और भी आसान"</p>
@@ -29,15 +30,13 @@
         <button class="pill">👤 Dev Nain</button>
         <a href="tel:+918950101037" class="contact-btn">📞 +91 8950101037</a>
       </div>
-    </header>
+    </div>
 
-    <!-- TICKER -->
     <div class="ticker-row">
-      <p><strong>02:19:26 PM | 28 मार्च 2026</strong></p>
+      <p><strong id="time">Loading...</strong></p>
       <p class="notice">● मेहनत करो, नाम खुद बनेगा</p>
     </div>
 
-    <!-- NAV -->
     <nav class="menu-row">
       <button class="tab active">Home</button>
       <button class="tab">Forms</button>
@@ -46,58 +45,55 @@
       <a class="join-btn" href="https://wa.me/918950101037" target="_blank">Join WhatsApp</a>
     </nav>
 
-    <!-- MAIN -->
-    <main>
+  </header>
 
-      <!-- SEARCH -->
-      <section class="search-wrap">
-        <input type="text" placeholder="Search any service (e.g. Aadhaar, Ration, PAN)...">
-        <button aria-label="Search">➜</button>
-      </section>
+  <!-- MAIN -->
+  <main>
 
-      <!-- FILTERS -->
-      <section class="filters">
-        <button class="chip selected">⭐ Most Used</button>
-        <button class="chip">🌐 All</button>
-        <button class="chip">🪪 ID & Cards</button>
-        <button class="chip">🌾 Kisan</button>
-        <button class="chip">🎓 Students</button>
-        <button class="chip">🧰 Tools/Utility</button>
-      </section>
+    <section class="search-wrap">
+      <input type="text" placeholder="Search any service...">
+      <button>➜</button>
+    </section>
 
-      <!-- SERVICES -->
-      <section class="service-grid">
-        <article class="service-card"><span>🏠</span><h3>Saral Haryana</h3></article>
-        <article class="service-card"><span>🧑‍🦯</span><h3>Pension Status</h3></article>
-        <article class="service-card"><span>🚌</span><h3>Property ID (NDC)</h3></article>
-        <article class="service-card"><span>🚗</span><h3>HSRP Number Plate</h3></article>
-        <article class="service-card"><span>👨‍👩‍👧‍👦</span><h3>Family ID</h3></article>
-        <article class="service-card"><span>💜</span><h3>Ayushman Card</h3></article>
-        <article class="service-card"><span>🛜</span><h3>Digital Seva (CSC)</h3></article>
-        <article class="service-card"><span>🪪</span><h3>Aadhaar Card</h3></article>
-        <article class="service-card"><span>🍽️</span><h3>Ration Card</h3></article>
-        <article class="service-card"><span>🗺️</span><h3>Jamabandi</h3></article>
-        <article class="service-card"><span>🎓</span><h3>College Forms</h3></article>
-        <article class="service-card"><span>🌿</span><h3>Farmer ID</h3></article>
-      </section>
+    <section class="filters">
+      <button class="chip selected">⭐ Most Used</button>
+      <button class="chip">🌐 All</button>
+      <button class="chip">🪪 ID</button>
+      <button class="chip">🌾 Kisan</button>
+      <button class="chip">🎓 Student</button>
+    </section>
 
-    </main>
+    <section class="service-grid">
+      <div class="service-card">🏠 Saral Haryana</div>
+      <div class="service-card">🧾 Pension</div>
+      <div class="service-card">🚗 HSRP</div>
+      <div class="service-card">👨‍👩‍👧 Family ID</div>
+      <div class="service-card">💜 Ayushman</div>
+      <div class="service-card">🪪 Aadhaar</div>
+      <div class="service-card">🍽️ Ration</div>
+      <div class="service-card">🗺️ Jamabandi</div>
+    </section>
 
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-links">
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Privacy</a>
-      </div>
+  </main>
 
-      <p>© 2026 Nain Photostate & Online Center. Design by Dev Nain</p>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Nain Photostate & Online Center</p>
+  </footer>
 
-      <small>
-        This website is not a government website. CSC and online services are provided independently for public convenience.
-      </small>
-    </footer>
+</div>
 
-  </div>
+<!-- SIMPLE JS (TIME) -->
+<script>
+function updateTime(){
+  const now = new Date();
+  document.getElementById("time").innerText =
+    now.toLocaleTimeString() + " | " +
+    now.toLocaleDateString("hi-IN");
+}
+setInterval(updateTime,1000);
+updateTime();
+</script>
+
 </body>
 </html>
